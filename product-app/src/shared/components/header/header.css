@@ -9,3 +9,16 @@
   justify-content: flex-end;
   align-items: center;
 }
+
+/* @media screen and (min-width: 250px) {
+  .container-title {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+  }
+  .container-shoppingcard {
+    display: block;
+    flex-direction: row;
+    flex-grow: 1;
+  }
+} */
