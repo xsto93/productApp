@@ -6,7 +6,7 @@ import './header.css';
 
 const { Header, Content } = Layout;
 const { Title, Text } = Typography;
-const { string } = PropTypes;
+const { string, element } = PropTypes;
 
 function Navbar({ title, children }) {
   return (
@@ -48,6 +48,7 @@ function Navbar({ title, children }) {
 
 Navbar.propTypes = {
   title: string.isRequired,
+  children: element,
 };
 
 export default Navbar;
