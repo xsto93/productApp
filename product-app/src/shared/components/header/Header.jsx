@@ -18,8 +18,8 @@ function Navbar({ title, children }) {
               xl={12}
               lg={12}
               md={12}
-              sm={20}
-              xs={20}
+              sm={24}
+              xs={24}
               className="container-title"
             >
               <Title id="title-button" level={4}>
@@ -30,8 +30,8 @@ function Navbar({ title, children }) {
               xl={12}
               lg={12}
               md={12}
-              sm={4}
-              xs={4}
+              sm={24}
+              xs={24}
               className="container-shoppingcard"
             >
               <Text id="title-cart" level={3} style={{ color: '#1890ff' }}>

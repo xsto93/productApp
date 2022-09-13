@@ -5,3 +5,12 @@
   grid-gap: 15px;
   padding: 1rem;
 }
+
+@media only screen and (max-width: 900px) {
+  .product-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-gap: 15px;
+    padding: 1rem;
+  }
+}

@@ -3,3 +3,9 @@
   box-shadow: 0 0.14em 0.57em #001529;
   margin: 0.357em 5em 0.357em 5em;
 }
+
+@media (max-width: 400px) {
+  .main-content {
+    margin: 0;
+  }
+}
