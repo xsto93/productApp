@@ -9,3 +9,18 @@
   justify-content: flex-end;
   align-items: center;
 }
+
+@media (max-width: 720px) {
+  .ant-layout-header {
+    height: 84px;
+  }
+  .container-shoppingcard {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-title {
+    align-items: center;
+    justify-content: center;
+  }
+}

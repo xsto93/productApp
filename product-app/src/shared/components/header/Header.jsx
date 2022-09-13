@@ -1,12 +1,13 @@
 import React from 'react';
 import { Row, Col, Typography, Layout } from 'antd';
+//import { ShoppingCartOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './header.css';
 
 const { Header, Content } = Layout;
 const { Title, Text } = Typography;
-const { string } = PropTypes;
+const { string, element } = PropTypes;
 
 function Navbar({ title, children }) {
   return (
@@ -18,8 +19,8 @@ function Navbar({ title, children }) {
               xl={12}
               lg={12}
               md={12}
-              sm={20}
-              xs={20}
+              sm={24}
+              xs={24}
               className="container-title"
             >
               <Title id="title-button" level={4}>
@@ -30,13 +31,21 @@ function Navbar({ title, children }) {
               xl={12}
               lg={12}
               md={12}
-              sm={4}
-              xs={4}
+              sm={24}
+              xs={24}
               className="container-shoppingcard"
             >
               <Text id="title-cart" level={3} style={{ color: '#1890ff' }}>
-                <p>Nº de artículos: 0</p>
+                <p>
+                  Nº de artículos: <strong>671</strong>
+                </p>
               </Text>
+              {/*<div className="div">
+                 <ShoppingCartOutlined
+                  alt="carro"
+                  style={{ color: '#1890ff', fontSize: '1rem' }}
+                />
+              </div>*/}
             </Col>
           </Row>
         </Header>
@@ -48,6 +57,7 @@ function Navbar({ title, children }) {
 
 Navbar.propTypes = {
   title: string.isRequired,
+  children: element,
 };
 
 export default Navbar;
