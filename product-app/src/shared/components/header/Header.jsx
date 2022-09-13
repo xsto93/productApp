@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col, Typography, Layout } from 'antd';
+//import { ShoppingCartOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './header.css';
@@ -35,8 +36,16 @@ function Navbar({ title, children }) {
               className="container-shoppingcard"
             >
               <Text id="title-cart" level={3} style={{ color: '#1890ff' }}>
-                <p>Nº de artículos: 0</p>
+                <p>
+                  Nº de artículos: <strong>671</strong>
+                </p>
               </Text>
+              {/*<div className="div">
+                 <ShoppingCartOutlined
+                  alt="carro"
+                  style={{ color: '#1890ff', fontSize: '1rem' }}
+                />
+              </div>*/}
             </Col>
           </Row>
         </Header>

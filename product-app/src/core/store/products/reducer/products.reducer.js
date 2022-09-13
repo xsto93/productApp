@@ -810,7 +810,14 @@ export function productsReducer(state = productsInitialState, action) {
     case 'GET_PRODUCTS':
       return {
         ...state,
-        ...action.payload,
+        products: action.payload,
+        filteredProducts: action.payload,
+        lastConsultedDate: new Date(),
+      };
+    case 'SET_FILTERED_PRODUCTS':
+      return {
+        ...state,
+        filteredProducts: action.payload,
       };
     default:
       return state;

@@ -6,6 +6,10 @@
   padding: 1rem;
 }
 
+.product-list-searcher {
+  padding: 1rem;
+}
+
 @media only screen and (max-width: 900px) {
   .product-list-container {
     display: grid;
