@@ -8,7 +8,7 @@ const { func, array } = PropTypes;
 const { Option } = Select;
 
 const selectStyle = {
-  width: '250px',
+  width: '200px',
 };
 
 const validateStatus = {
