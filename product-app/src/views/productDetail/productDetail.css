@@ -1,0 +1,19 @@
+.product-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+.product-detail-image {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .product-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

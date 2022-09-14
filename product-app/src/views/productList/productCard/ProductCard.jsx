@@ -1,8 +1,10 @@
 import React from 'react';
 import { Card, Statistic, Button } from 'antd';
 import { EuroOutlined } from '@ant-design/icons';
+import ProductImage from '../productImage/ProductImage';
 import PropTypes from 'prop-types';
 const { func, string } = PropTypes;
+import './productCard.css';
 
 const ProductCard = ({ image, id, subTitle, title, price, onClick }) => {
   const handleOnClick = (evt) => {
@@ -13,10 +15,10 @@ const ProductCard = ({ image, id, subTitle, title, price, onClick }) => {
   return (
     <Card
       cover={
-        <img
-          alt="title"
-          src={image}
-          style={{ objectFit: 'contain', width: '150px', height: '150px' }}
+        <ProductImage
+          imageUrl={image}
+          alt={title}
+          className="product-image-container"
         />
       }
       actions={[
@@ -31,7 +33,7 @@ const ProductCard = ({ image, id, subTitle, title, price, onClick }) => {
         title="Precio"
         value={price}
         precision={2}
-        suffix={<EuroOutlined />}
+        suffix={<EuroOutlined style={{ fontSize: '0.75em' }} />}
       />
     </Card>
   );
