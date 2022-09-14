@@ -29,7 +29,7 @@ const ProductDetail = () => {
           span={12}
           className="product-container"
           xl={12}
-          lg={12}
+          lg={24}
           md={24}
           sm={24}
           xs={24}
@@ -44,7 +44,7 @@ const ProductDetail = () => {
           span={12}
           className="product-container"
           xl={12}
-          lg={12}
+          lg={24}
           md={24}
           sm={24}
           xs={24}

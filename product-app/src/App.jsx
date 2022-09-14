@@ -1,11 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import './App.css';
-import 'antd/dist/antd.css';
 import { ProductList, ProductDetail } from './views';
 import { Breadcrumb, Navbar } from './shared/components';
 import { Provider } from 'react-redux';
 import reduxStore from './core/store/store';
+import './App.css';
 
 function App() {
   return (
