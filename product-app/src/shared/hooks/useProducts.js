@@ -6,11 +6,13 @@ import {
 } from '../../core/store/products/actions/products.action';
 
 export default function useProducts(searchCriteria) {
-  const { products, filteredProducts } = useSelector((state) => state.products);
+  const { products, filteredProducts, loading } = useSelector(
+    (state) => state.products,
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getProductsThunk());
+    if (!products.length) dispatch(getProductsThunk());
   }, []);
 
   useEffect(() => {
@@ -27,5 +29,5 @@ export default function useProducts(searchCriteria) {
     dispatch(setFilteredProducts(newProducts));
   }, [searchCriteria]);
 
-  return { products, filteredProducts };
+  return { products, filteredProducts, loading };
 }
