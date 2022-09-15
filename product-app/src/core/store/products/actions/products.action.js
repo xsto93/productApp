@@ -6,7 +6,10 @@ const SET_LOADING = 'SET_LOADING';
 
 const getAllProducts = (products) => ({
   type: GET_PRODUCTS,
-  payload: products,
+  payload: {
+    products: products,
+    date: new Date(),
+  },
 });
 
 export const setFilteredProducts = (filteredProducts) => ({

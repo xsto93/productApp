@@ -10,9 +10,9 @@ export function productsReducer(state = productsInitialState, action) {
     case 'GET_PRODUCTS':
       return {
         ...state,
-        products: action.payload,
-        filteredProducts: action.payload,
-        lastConsultedDate: new Date(),
+        products: action.payload.products,
+        filteredProducts: action.payload.products,
+        lastConsultedDate: action.payload.date,
       };
     case 'SET_FILTERED_PRODUCTS':
       return {
