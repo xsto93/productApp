@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Spin } from 'antd';
+import { Empty, Row, Spin } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import useProducts from '../../shared/hooks/useProducts';
 import useFilter from '../../shared/hooks/useFilter';
@@ -9,7 +9,6 @@ import './productList.css';
 
 const ProductList = () => {
   const navigate = useNavigate();
-  //const [filterText, setFilterText] = useState('');
   const { filter, setFilterTextValue } = useFilter();
   const { filteredProducts: products, loading } = useProducts(filter);
 
@@ -41,6 +40,7 @@ const ProductList = () => {
               />
             ))}
         </div>
+        {filter && products.length == 0 ? <Empty /> : null}
       </Spin>
     </>
   );
