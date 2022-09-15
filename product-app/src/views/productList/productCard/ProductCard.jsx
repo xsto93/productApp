@@ -14,6 +14,7 @@ const ProductCard = ({ image, id, subTitle, title, price, onClick }) => {
 
   return (
     <Card
+      size="small"
       cover={
         <ProductImage
           imageUrl={image}

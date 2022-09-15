@@ -1,28 +1,29 @@
-import React, { useState } from 'react';
-import { Row, Spin } from 'antd';
+import React from 'react';
+import { Empty, Row, Spin } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import useProducts from '../../shared/hooks/useProducts';
+import useFilter from '../../shared/hooks/useFilter';
 import ProductCard from './productCard/ProductCard';
-import './productList.css';
 import ProductSearch from './productSearch/ProductSearch';
+import './productList.css';
 
 const ProductList = () => {
   const navigate = useNavigate();
-  const [filterText, setFilterText] = useState('');
-  const { filteredProducts: products, loading } = useProducts(filterText);
+  const { filter, setFilterTextValue } = useFilter();
+  const { filteredProducts: products, loading } = useProducts(filter);
 
   const navigateToProductDetail = (id) => {
     navigate(`/products/${id}`, { replace: true });
   };
 
   const handleFilterTextChange = (value) => {
-    setFilterText(value);
+    setFilterTextValue(value);
   };
 
   return (
     <>
       <Row justify="end">
-        <ProductSearch onChange={handleFilterTextChange} />
+        <ProductSearch onChange={handleFilterTextChange} value={filter} />
       </Row>
       <Spin spinning={loading}>
         <div className="product-list-container">
@@ -39,6 +40,7 @@ const ProductList = () => {
               />
             ))}
         </div>
+        {filter && products.length == 0 ? <Empty /> : null}
       </Spin>
     </>
   );
