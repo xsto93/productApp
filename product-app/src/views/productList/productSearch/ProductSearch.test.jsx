@@ -28,7 +28,7 @@ describe('ProductSearch test suite', () => {
       code: "Enter",
       keyCode: 13,
       charCode: 13
-});
+    });
     expect(props.onChange).toHaveBeenCalledWith("value");
   });
 });

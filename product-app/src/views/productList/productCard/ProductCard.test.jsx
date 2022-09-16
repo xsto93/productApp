@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import ProductCard from './ProductCard';
 
 
@@ -15,6 +15,40 @@ describe('ProductCard test suite', () => {
       onClick: jest.fn()
     };
     render(<ProductCard {...props}/>);
-  })
+
+    expect(screen.getByText('title')).toBeInTheDocument();
+  });
+
+
+  test('ProductCard renders without price', () => {
+
+    const props = {
+      image: null,
+      id: "1",
+      title: 'title',
+      subTitle: 'subtitle',
+      price: '',
+      onClick: jest.fn()
+    };
+    render(<ProductCard {...props}/>);
+    const price = screen.getByText("0");
+    expect(price.textContent).toBe("0");
+  });
+
+  test('ProductCard click in detail button', () => {
+
+    const props = {
+      image: null,
+      id: "1",
+      title: 'title',
+      subTitle: 'subtitle',
+      price: '',
+      onClick: jest.fn()
+    };
+    render(<ProductCard {...props}/>);
+    const button = screen.getByText("Ver detalle");
+    fireEvent.click(button);
+    expect(props.onClick).toHaveBeenCalledWith(props.id);
+  });
 
 });
