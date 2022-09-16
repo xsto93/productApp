@@ -6,7 +6,7 @@
   padding: 1rem;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 850px) {
   .product-list-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));

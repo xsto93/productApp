@@ -8,11 +8,12 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  padding: 1rem 0 0 0;
 }
 
 @media (max-width: 720px) {
   .ant-layout-header {
-    height: 84px;
+    height: 100px;
   }
   .container-shoppingcard {
     justify-content: center;
