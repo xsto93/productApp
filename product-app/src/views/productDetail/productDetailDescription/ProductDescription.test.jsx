@@ -15,41 +15,40 @@ describe('ProductDescription test suite', () => {
         so: "android",
         displayResolution: "200 x 200",
         battery: '4100mh',
-        dimentions:"",
-        weight: "",
+        dimentions:"10x10",
+        weight: "15g",
         primaryCamera: ['1', '2'],
-        secondaryCmera: ""
+        secondaryCmera: "a"
       }
     };
       render(<ProductDetailDescription {...mockProps}/>)
-
-      const brand = screen.getByText('Marca').closest("div");
-      const model = screen.getByText('Modelo').closest("div");
-      const price = screen.getByText('Precio').closest("div");
-      const cpu = screen.getByText('CPU').closest("div");
-      const ram = screen.getByText('RAM').closest("div");
-      const so = screen.getByText('Sistema Operativo').closest("div");
-      const resolution = screen.getByText('Resolución de Pantalla').closest("div");
-      const battery = screen.getByText('Bateria').closest("div");
-      const dimensions = screen.getByText('Dimensiones').closest("div");
-      const weight = screen.getByText('Peso').closest("div");
-      const camera = screen.getByText('Cámara Trasera').closest("div");
-      const secondCamera = screen.getByText('Cámara Delantera').closest("div");
-
       const {productData} = mockProps;
+      const brand = screen.getByText(productData.brand);
+      const model = screen.getByText(productData.model);
+      const price = screen.getByText(productData.price);
+      const cpu = screen.getByText(productData.cpu);
+      const ram = screen.getByText(productData.ram);
+      const so = screen.getByText(productData.so);
+      const resolution = screen.getByText(productData.displayResolution);
+      const battery = screen.getByText(productData.battery);
+      const dimensions = screen.getByText(productData.dimentions);
+      const weight = screen.getByText(productData.weight);
+      const camera = screen.getByText(productData.primaryCamera.join(', '))
+      const secondCamera = screen.getByText(productData.secondaryCmera);
 
-      expect(brand.textContent).toBe(`Marca${productData.brand}`);
-      expect(model.textContent).toBe(`Modelo${productData.model}`);
-      expect(price.textContent).toBe(`Precio${productData.price}.00`);
-      expect(cpu.textContent).toBe(`CPU${productData.cpu}`);
-      expect(ram.textContent).toBe(`RAM${productData.ram}`);
-      expect(so.textContent).toBe(`Sistema Operativo${productData.so}`);
-      expect(resolution.textContent).toBe(`Resolución de Pantalla${productData.displayResolution}`);
-      expect(battery.textContent).toBe(`Bateria${productData.battery}`);
-      expect(weight.textContent).toBe(`Peso${productData.weight}`);
-      expect(dimensions.textContent).toBe(`Dimensiones${productData.dimentions}`);
-      expect(camera.textContent).toBe(`Cámara Trasera${productData.primaryCamera.join(', ')}`);
-      expect(secondCamera.textContent).toBe(`Cámara Delantera${productData.secondaryCmera}`);
+
+      expect(brand.textContent).toBe(`${productData.brand}`);
+      expect(model.textContent).toBe(`${productData.model}`);
+      expect(price.textContent).toBe(`${productData.price}`);
+      expect(ram.textContent).toBe(`${productData.ram}`);
+      expect(so.textContent).toBe(`${productData.so}`);
+      expect(cpu.textContent).toBe(`${productData.cpu}`);
+      expect(resolution.textContent).toBe(`${productData.displayResolution}`);
+      expect(battery.textContent).toBe(`${productData.battery}`);
+      expect(weight.textContent).toBe(`${productData.weight}`);
+      expect(dimensions.textContent).toBe(`${productData.dimentions}`);
+      expect(camera.textContent).toBe(`${productData.primaryCamera.join(', ')}`);
+      expect(secondCamera.textContent).toBe(`${productData.secondaryCmera}`);
 
   });
 
