@@ -1,60 +1,20 @@
 {
-    "env": {
-      "browser": true,
-      "node": true
-    },
-    "extends": [
-      "plugin:jest/recommended",
-      "prettier",
-      "plugin:prettier/recommended",
-      "plugin:react/recommended",
-      "airbnb"
-    ],
-    "overrides": [
-      {
-        "env": {
-          "jest": true
-        },
-        "files": ["*.spec.ts"],
-        "rules": {
-          "no-unused-expressions": ["off"],
-          "jest/no-disabled-tests": "warn",
-          "jest/no-focused-tests": "error",
-          "jest/no-identical-title": "error",
-          "jest/prefer-to-have-length": "warn",
-          "jest/valid-expect": "error"
-        }
-      }
-    ],
-    "parserOptions": {
-      "ecmaVersion": 18,
-      "ecmaFeatures": {
-        "jsx": true
-      },
-      "sourceType": "module"
-    },
-    "plugins": ["jest", "react-hooks"],
-    "settings": {
-      "import/resolver": {
-        "alias": {
-          "map": [["statics", "./src/statics"]],
-          "extensions": [".js", ".jsx", ".json"]
-        }
-      },
-      "import/core-modules": ["statics"],
-      "react": {
-        "version": "detect"
-      }
-    },
-    "rules": {
-      "react/prefer-stateless-function": ["off"],
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
-      "semi": "off",
-      "no-unused-expressions": ["warn"],
-      "linebreak-style": ["off"],
-      "import/prefer-default-export": "off",
-      "func-names": "off"
-    }
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "react/react-in-jsx-scope": "off"
   }
-  
+}

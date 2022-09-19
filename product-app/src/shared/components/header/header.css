@@ -1,0 +1,27 @@
+.container-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.container-shoppingcard {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 0 0 0;
+}
+
+@media (max-width: 720px) {
+  .ant-layout-header {
+    height: 100px;
+  }
+  .container-shoppingcard {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-title {
+    align-items: center;
+    justify-content: center;
+  }
+}

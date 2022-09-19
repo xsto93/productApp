@@ -1,8 +1,20 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+
+
+describe('App Test', () => {
+
+  test('header title is rendered', () => {
+    render(<App />);
+    const titleLinkElement = screen.getByText(/ProductApp/i);
+    expect(titleLinkElement).toBeInTheDocument();
+  });
+
+  test('breadcrumb first element is rendered', () => {
+    render(<App />);
+    const breadcrumbText = screen.getByText(/Listado de productos/i);
+    expect(breadcrumbText).toBeInTheDocument();
+  });
+
+})
