@@ -15,9 +15,9 @@ jest.mock('react-redux', () => ({
 }));
 
 const mockUseSingleProduct = {
-  productData: {brand: 'Acer'},
-  colors: [{code: '1', name: 'color'}],
-  storage: [{code: '1', name: 'storage'}],
+  productData: { id: '1', brand: 'Acer' },
+  colors: [{ code: '1', name: 'color' }],
+  storage: [{ code: '1', name: 'storage' }],
   saveProduct: jest.fn()
 };
 
@@ -39,20 +39,30 @@ describe('Product Detail test suite', () => {
 
   test('Product Detail click in add button with color and storage', () => {
 
-    useSingleProduct.mockImplementation(() => ({...mockUseSingleProduct}));
+    useSingleProduct.mockImplementation(() => ({ ...mockUseSingleProduct }));
     render(<ProductDetail />);
     const saveButton = screen.getByText('Añadir').closest('button');
     fireEvent.click(saveButton);
-    expect(mockUseSingleProduct.saveProduct).toHaveBeenCalled();
+    expect(mockUseSingleProduct.saveProduct).toHaveBeenCalledWith({
+      colorCode: '1',
+      storageCode: '1',
+    });
   });
 
   test('Product Detail click in return button', () => {
 
-    useSingleProduct.mockImplementation(() => ({...mockUseSingleProduct}));
+    useSingleProduct.mockImplementation(() => ({ ...mockUseSingleProduct }));
     render(<ProductDetail />);
     const returnButton = screen.getByText('Atrás').closest('button');
     fireEvent.click(returnButton);
     expect(mockedUsedNavigate).toHaveBeenCalled();
+  });
+
+  test('Product Detail have an image', () => {
+    useSingleProduct.mockImplementation(() => ({ ...mockUseSingleProduct, productData: { title: 'Acer', imageUrl: 'localhost' } }));
+    render(<ProductDetail />);
+    let image = screen.getAllByAltText('Acer').reduce(image => image);
+    expect(image).toBeInTheDocument();
   });
 
 });
