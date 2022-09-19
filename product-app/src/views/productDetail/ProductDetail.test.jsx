@@ -59,9 +59,9 @@ describe('Product Detail test suite', () => {
   });
 
   test('Product Detail have an image', () => {
-    useSingleProduct.mockImplementation(() => ({ ...mockUseSingleProduct, productData: { title: 'Acer', imageUrl: 'localhost' } }));
+    useSingleProduct.mockImplementation(() => ({ ...mockUseSingleProduct, productData: { title: 'Acer', imageUrl: 'localhost', price:'100' } }));
     render(<ProductDetail />);
-    let image = screen.getAllByAltText('Acer').reduce(image => image);
+    const image = screen.getAllByAltText('Acer').reduce(image => image);
     expect(image).toBeInTheDocument();
   });
 

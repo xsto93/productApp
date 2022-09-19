@@ -40,7 +40,7 @@ describe('ProductDescription test suite', () => {
 
       expect(brand.textContent).toBe(`Marca${productData.brand}`);
       expect(model.textContent).toBe(`Modelo${productData.model}`);
-      expect(price.textContent).toBe(`Precio${productData.price}`);
+      expect(price.textContent).toBe(`Precio${productData.price}.00`);
       expect(cpu.textContent).toBe(`CPU${productData.cpu}`);
       expect(ram.textContent).toBe(`RAM${productData.ram}`);
       expect(so.textContent).toBe(`Sistema Operativo${productData.so}`);
