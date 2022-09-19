@@ -7,10 +7,6 @@ const { func, array } = PropTypes;
 
 const { Option } = Select;
 
-const selectStyle = {
-  width: '200px',
-};
-
 const validateStatus = {
   error: 'error',
   success: 'success',
@@ -66,7 +62,6 @@ const ProductDetailActions = ({ colors, storages, onSubmit, onCancel }) => {
             <Select
               placeholder="Colores"
               value={selectedColor}
-              style={selectStyle}
               onChange={(value) => {
                 setSelectedColor(value);
                 setSelectedColorValidateStatus(null);
@@ -90,7 +85,6 @@ const ProductDetailActions = ({ colors, storages, onSubmit, onCancel }) => {
             <Select
               placeholder="Almacenamiento"
               value={selectedStorage}
-              style={selectStyle}
               onChange={(value) => {
                 setSelectedStorage(value);
                 setSelectedStorageValidateStatus(null);
