@@ -13,6 +13,7 @@ const ProductDetailDescription = ({ productData = {} }) => {
     <Descriptions
       title="Detalle del producto"
       column={{ xxl: 2, xl: 2, lg: 2, md: 1, sm: 1, xs: 1 }}
+      bordered
     >
       <Descriptions.Item label="Marca" labelStyle={labelStyle}>
         {productData?.brand}
@@ -55,9 +56,13 @@ const ProductDetailDescription = ({ productData = {} }) => {
       <Descriptions.Item label="Precio" labelStyle={labelStyle}>
         <Statistic
           title=""
-          value={productData?.price}
           precision={2}
-          suffix={<EuroOutlined style={{ fontSize: '0.5em' }} />}
+          value={`${!productData?.price ? 'N/A' : productData?.price}`}
+          suffix={
+            !productData?.price ? null : (
+              <EuroOutlined style={{ fontSize: '0.5em' }} />
+            )
+          }
         />
       </Descriptions.Item>
     </Descriptions>

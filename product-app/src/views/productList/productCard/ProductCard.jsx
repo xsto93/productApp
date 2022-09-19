@@ -32,9 +32,9 @@ const ProductCard = ({ image, id, subTitle, title, price, onClick }) => {
       <Card.Meta title={title} description={subTitle} />
       <Statistic
         title="Precio"
-        value={price}
+        value={!price ? 'N/A' : price}
         precision={2}
-        suffix={<EuroOutlined style={{ fontSize: '0.75em' }} />}
+        suffix={!price ? null : <EuroOutlined style={{ fontSize: '0.75em' }} />}
       />
     </Card>
   );
