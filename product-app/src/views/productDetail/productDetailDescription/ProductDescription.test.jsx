@@ -42,6 +42,7 @@ describe('ProductDescription test suite', () => {
       expect(price.textContent).toBe(`${productData.price}`);
       expect(ram.textContent).toBe(`${productData.ram}`);
       expect(so.textContent).toBe(`${productData.so}`);
+      expect(cpu.textContent).toBe(`${productData.cpu}`);
       expect(resolution.textContent).toBe(`${productData.displayResolution}`);
       expect(battery.textContent).toBe(`${productData.battery}`);
       expect(weight.textContent).toBe(`${productData.weight}`);
