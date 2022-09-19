@@ -1,5 +1,5 @@
-import { Row, Col, message } from 'antd';
 import React from 'react';
+import { Row, Col, message } from 'antd';
 import { useNavigate, useParams } from 'react-router-dom';
 import ProductDetailDescription from './productDetailDescription/ProductDetailDescription';
 import ProductDetailActions from './productDetailActions/ProductDetailActions';

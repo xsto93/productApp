@@ -1,5 +1,6 @@
 import React from 'react';
-import { Descriptions } from 'antd';
+import { Descriptions, Statistic } from 'antd';
+import { EuroOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';
 const { object } = PropTypes;
 
@@ -19,9 +20,9 @@ const ProductDetailDescription = ({ productData = {} }) => {
       <Descriptions.Item label="Modelo" labelStyle={labelStyle}>
         {productData?.model}
       </Descriptions.Item>
-      <Descriptions.Item label="Precio" labelStyle={labelStyle}>
+      {/* <Descriptions.Item label="Precio" labelStyle={labelStyle}>
         {productData?.price}
-      </Descriptions.Item>
+      </Descriptions.Item> */}
       <Descriptions.Item label="CPU" labelStyle={labelStyle}>
         {productData?.cpu}
       </Descriptions.Item>
@@ -50,6 +51,14 @@ const ProductDetailDescription = ({ productData = {} }) => {
       </Descriptions.Item>
       <Descriptions.Item label="Cámara Delantera" labelStyle={labelStyle}>
         {productData?.secondaryCmera}
+      </Descriptions.Item>
+      <Descriptions.Item label="Precio" labelStyle={labelStyle}>
+        <Statistic
+          title=""
+          value={productData?.price}
+          precision={2}
+          suffix={<EuroOutlined style={{ fontSize: '0.5em' }} />}
+        />
       </Descriptions.Item>
     </Descriptions>
   );

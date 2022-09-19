@@ -6,8 +6,15 @@
   margin: 0.25rem;
 }
 
-.product-image-container > img {
+.product-image-container img {
   object-fit: 'contain';
   width: '150px';
   height: '150px';
+}
+
+@media only screen and (max-width: 850px) {
+  .product-image-container img {
+    width: '100px';
+    height: '100px';
+  }
 }

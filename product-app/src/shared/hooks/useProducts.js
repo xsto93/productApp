@@ -12,7 +12,7 @@ export default function useProducts(searchCriteria) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!products.length) dispatch(getProductsThunk());
+    dispatch(getProductsThunk());
   }, []);
 
   useEffect(() => {

@@ -1,13 +1,13 @@
 import React from 'react';
-import { Row, Col, Typography, Layout } from 'antd';
+import { Row, Col, Typography, Layout, Badge, Avatar } from 'antd';
 import { useSelector } from 'react-redux';
-//import { ShoppingCartOutlined } from '@ant-design/icons';
+import { ShoppingCartOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './header.css';
 
 const { Header, Content } = Layout;
-const { Title, Text } = Typography;
+const { Title } = Typography;
 const { string, element } = PropTypes;
 
 function Navbar({ title, children }) {
@@ -37,17 +37,19 @@ function Navbar({ title, children }) {
               xs={24}
               className="container-shoppingcard"
             >
-              <Text id="title-cart" level={3} style={{ color: '#1890ff' }}>
-                <p>
-                  Nº de artículos: <strong>{cartNumber}</strong>
-                </p>
-              </Text>
-              {/*<div className="div">
-                 <ShoppingCartOutlined
-                  alt="carro"
-                  style={{ color: '#1890ff', fontSize: '1rem' }}
+              <Badge count={cartNumber}>
+                <Avatar
+                  shape="circle"
+                  size="large"
+                  style={{ backgroundColor: '#032745' }}
+                  icon={
+                    <ShoppingCartOutlined
+                      alt="carro"
+                      style={{ color: '#1890ff', fontSize: '1.25rem' }}
+                    />
+                  }
                 />
-              </div>*/}
+              </Badge>
             </Col>
           </Row>
         </Header>
