@@ -46,5 +46,6 @@ export default function getProductById(id) {
 
   return fetch(apiURL)
     .then((response) => response.json())
-    .then(fromApiResponseToProductDetail);
+    .then(fromApiResponseToProductDetail)
+    .catch((error) => error?.message);
 }

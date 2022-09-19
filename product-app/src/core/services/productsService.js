@@ -13,5 +13,6 @@ export default function getProducts() {
 
   return fetch(apiURL)
     .then((response) => response.json())
-    .then(fromApiResponseToProducts);
+    .then(fromApiResponseToProducts)
+    .catch((error) => error?.message);
 }

@@ -31,8 +31,13 @@ export const getProductsThunk = () => async (dispatch, getState) => {
     Date.now() - lastConsultedDate >= TIMEOUT
   ) {
     dispatch(setLoading(true));
-    const products = await getProducts();
-    dispatch(getAllProducts(products));
-    dispatch(setLoading(false));
+    try {
+      const products = await getProducts();
+      dispatch(getAllProducts(products));
+      dispatch(setLoading(false));
+    } catch (error) {
+      dispatch(getAllProducts([]));
+      dispatch(setLoading(false));
+    }
   }
 };

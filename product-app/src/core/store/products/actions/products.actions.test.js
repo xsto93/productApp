@@ -75,8 +75,9 @@ describe('Product actions test suite',() => {
     }
     const store = mockStore(mockState);
     store.getState = () => ({ products: [] });
-    store.dispatch(getProductsThunk()).then(() => {
+    store.dispatch(getProductsThunk())
+    .then(() => {
       expect(store.getActions()).toEqual(expectedActions);
-    });
+    })
   });
 });

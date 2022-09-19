@@ -9,7 +9,11 @@ export const setCardNumber = (cartNumber) => ({
 
 export const setCartNumberThunk =
   (productInfo) => async (dispatch, getState) => {
-    const cartNumber = await addProductToCart(productInfo);
-    const { cartNumber: actualCardNumber } = getState();
-    dispatch(setCardNumber(cartNumber + (actualCardNumber || 0)));
+    try {
+      const cartNumber = await addProductToCart(productInfo);
+      const { cartNumber: actualCardNumber } = getState();
+      dispatch(setCardNumber(cartNumber + (actualCardNumber || 0)));
+    } catch (error) {
+      dispatch(setCardNumber(0));
+    }
   };
