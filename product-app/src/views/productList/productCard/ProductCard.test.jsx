@@ -31,8 +31,8 @@ describe('ProductCard test suite', () => {
       onClick: jest.fn()
     };
     render(<ProductCard {...props}/>);
-    const price = screen.getByText("0");
-    expect(price.textContent).toBe("0");
+    const price = screen.getByText("N/A");
+    expect(price.textContent).toBe("N/A");
   });
 
   test('ProductCard click in detail button', () => {
